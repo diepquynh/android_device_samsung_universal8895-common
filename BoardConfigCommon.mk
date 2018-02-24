@@ -132,6 +132,4 @@ BOARD_HAVE_SAMSUNG_WIFI          := true
 # Shims
 TARGET_LD_SHIM_LIBS += \
     /system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
-    /system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so \
-    /system/lib/libstagefright.so|/vendor/lib/libstagefright_shim.so \
-    /system/lib64/libstagefright.so|/vendor/lib64/libstagefright_shim.so
+    /system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
