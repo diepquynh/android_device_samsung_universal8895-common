@@ -235,6 +235,15 @@ Add a comment to this line
     -->
     <!--integer name="config_LTE_RSRP_threshold_type">2</integer-->
 
+    <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
+    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
+
+    <!-- Wifi driver supports batched scan -->
+    <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
+
+    <!-- Boolean indicating whether the wifi chipset has background scan support -->
+    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
+
     <!-- Idle Receive current for wifi radio. 0 by default-->
     <integer translatable="false" name="config_wifi_idle_receive_cur_ma">1</integer>
 
