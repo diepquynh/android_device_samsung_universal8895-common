@@ -15,7 +15,7 @@
  */
 
 #define ATRACE_TAG (ATRACE_TAG_POWER | ATRACE_TAG_HAL)
-#define LOG_TAG "android.hardware.power@1.2-service.8895-libperfmgr"
+#define LOG_TAG "android.hardware.power@1.3-service.8895-libperfmgr"
 
 #include <android-base/file.h>
 #include <android-base/logging.h>
@@ -33,7 +33,7 @@
 namespace android {
 namespace hardware {
 namespace power {
-namespace V1_2 {
+namespace V1_3 {
 namespace implementation {
 
 using ::android::hardware::power::V1_0::Feature;
@@ -227,6 +227,29 @@ Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
     return powerHint(static_cast<PowerHint_1_0>(hint), data);
 }
 
+// Methods from ::android::hardware::power::V1_3::IPower follow.
+Return<void> Power::powerHintAsync_1_3(PowerHint_1_3 hint, int32_t data) {
+    if (!isSupportedGovernor()) {
+        return Void();
+    }
+
+    if (hint == PowerHint_1_3::EXPENSIVE_RENDERING) {
+        if (mSustainedPerfModeOn) {
+            return Void();
+        }
+
+        if (data > 0) {
+            mHintManager->DoHint("EXPENSIVE_RENDERING");
+        } else {
+            mHintManager->EndHint("EXPENSIVE_RENDERING");
+        }
+    } else {
+        return powerHintAsync_1_2(static_cast<PowerHint_1_2>(hint), data);
+    }
+
+    return Void();
+}
+
 constexpr const char* boolToString(bool b) {
     return b ? "true" : "false";
 }
@@ -252,7 +275,7 @@ Return<void> Power::debug(const hidl_handle& handle, const hidl_vec<hidl_string>
 }
 
 }  // namespace implementation
-}  // namespace V1_2
+}  // namespace V1_3
 }  // namespace power
 }  // namespace hardware
 }  // namespace android

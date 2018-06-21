@@ -201,6 +201,18 @@
       "Node": "EMSGlobalBoost",
       "Duration": 0,
       "Value": "100"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "GPUMinFreq",
+      "Duration": 0,
+      "Value": "455000"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "GPUMaxFreq",
+      "Duration": 0,
+      "Value": "572000"
     }
   ]
 }
