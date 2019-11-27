@@ -161,11 +161,12 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras
 
-# Power
+# PowerHAL
 PRODUCT_PACKAGES += \
-    power.universal8895 \
-    android.hardware.power@1.0-service \
-    android.hardware.power@1.0-impl
+    android.hardware.power@1.2-service.8895-libperfmgr
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Permissions
 PRODUCT_COPY_FILES += \
