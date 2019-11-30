@@ -173,6 +173,12 @@
       "Value": "715000"
     },
     {
+      "PowerHint": "INTERACTION",
+      "Node": "EMSGlobalBoost",
+      "Duration": 0,
+      "Value": "100"
+    },
+    {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 5000,
