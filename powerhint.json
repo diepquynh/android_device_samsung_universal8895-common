@@ -66,6 +66,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "PMQoSCpuDmaLatency",
+      "Path": "/dev/cpu_dma_latency",
+      "Values": [
+        "2",
+        "-1"
+      ],
+      "HoldFd": true
+    },
+    {
       "Name": "EMSGlobalBoost",
       "Path": "/sys/kernel/ems/global_boost",
       "Values": [
@@ -174,6 +183,12 @@
     },
     {
       "PowerHint": "INTERACTION",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 0,
+      "Value": "2"
+    },
+    {
+      "PowerHint": "INTERACTION",
       "Node": "EMSGlobalBoost",
       "Duration": 0,
       "Value": "100"
@@ -195,6 +210,12 @@
       "Node": "CPULittleClusterMinFreq",
       "Duration": 5000,
       "Value": "1053000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 0,
+      "Value": "2"
     },
     {
       "PowerHint": "LAUNCH",

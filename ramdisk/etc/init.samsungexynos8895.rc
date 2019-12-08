@@ -191,6 +191,9 @@ on post-fs-data
     chown wifi root /efs/wifi/.mac.cob
     chmod 0664 /efs/wifi/.mac.cob
 
+# PowerHAL
+    chown system system /dev/cpu_dma_latency
+
 on boot
 # SSWAP
     write /proc/sys/vm/swappiness 160
